@@ -5,7 +5,7 @@ name: PSX Market Data Scraper
 on:
   schedule:
     # Runs at 4:45 UTC, which is 9:45 AM PKT
-    - cron: '45 4 * * *'
+    - cron: '* * * * *'
   workflow_dispatch:
 
 jobs:
