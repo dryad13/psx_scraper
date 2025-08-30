@@ -1,9 +1,10 @@
 # requirements.txt
-pandas
-gspread
-gspread-pandas
-google-auth-oauthlib
-pytz
-html5lib
-beautifulsoup4
-lxml
+playwright==1.55.0
+pandas==2.3.2
+gspread==5.12.4
+gspread-pandas==3.3.0
+google-auth-oauthlib==1.2.2
+pytz==2025.2
+lxml==6.0.1
+html5lib==1.1
+beautifulsoup4==4.13.5
