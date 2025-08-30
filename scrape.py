@@ -28,7 +28,8 @@ def get_google_sheets_client():
     else:
         # Assumes your downloaded JSON key file is named 'credentials.json'
         # and is in the same folder as this script.
-        client = gspread.service_account(filename='credentials.json')
+        cred_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), "credentials.json")
+        client = gspread.service_account(filename=cred_path)
         return client
 
 def is_market_hours():
