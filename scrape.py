@@ -46,7 +46,7 @@ def scrape_psx_data():
     with sync_playwright() as p:
         # Launch browser with additional context options
         browser = p.chromium.launch(
-            headless=False,
+            headless=True,
             args=[
                 '--disable-blink-features=AutomationControlled',
                 '--user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.212 Safari/537.36'
@@ -115,7 +115,7 @@ def scrape_kse100_data():
     
     with sync_playwright() as p:
         browser = p.chromium.launch(
-            headless=False,
+            headless=True,
             args=['--disable-blink-features=AutomationControlled']
         )
         page = browser.new_page()
