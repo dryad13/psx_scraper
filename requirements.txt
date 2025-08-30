@@ -1,0 +1,9 @@
+# requirements.txt
+pandas
+gspread
+gspread-pandas
+google-auth-oauthlib
+pytz
+html5lib
+beautifulsoup4
+lxml
