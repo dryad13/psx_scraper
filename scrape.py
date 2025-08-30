@@ -183,9 +183,8 @@ def upload_to_gsheet(df, sheet_title=SHEET_TITLE):
     print(f"{sheet_title} updated successfully at {timestamp} PKT.")
 
 # --- Main execution block ---
-if __name__ == "__main__":
-    print("--- TESTING WORKFLOW: Forcing a one-time test run outside market hours. ---")
-    
+if is_market_hours():
+    print("Market is open. Starting scrapers...")
     # Scrape and upload PSX data
     psx_data = scrape_psx_data()
     upload_to_gsheet(psx_data, SHEET_TITLE)
@@ -193,3 +192,5 @@ if __name__ == "__main__":
     # Scrape and upload KSE100 data
     kse100_data = scrape_kse100_data()
     upload_to_gsheet(kse100_data, 'KSE100 Constituents')
+else:
+    print("Outside market hours, skipping capture.")
