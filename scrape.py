@@ -180,6 +180,8 @@ def upload_to_gsheet(df, sheet_title=SHEET_TITLE):
     worksheet.update([df.columns.values.tolist()] + df.values.tolist())
 
     timestamp = datetime.now(pytz.timezone("Asia/Karachi")).strftime('%Y-%m-%d %H:%M:%S')
+     # Add a note below the dataset indicating the last update time
+    worksheet.append_row([f"Last updated: {timestamp} PKT"])
     print(f"{sheet_title} updated successfully at {timestamp} PKT.")
 
 # --- Main execution block ---
