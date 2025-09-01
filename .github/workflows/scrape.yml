@@ -1,4 +1,4 @@
-# .github/workflows/psx_scraper.yml
+# .github/workflows/scrape.yml
 
 name: PSX Market Data Scraper
 
@@ -36,8 +36,8 @@ jobs:
 
       - name: Install Python dependencies
         run: |
-          python -m pip install --upgrade pip
-          pip install -r requirements.txt
+          python -m pip install --upgrade pip --cache-dir ~/.cache/pip
+          pip install -r requirements.txt --cache-dir ~/.cache/pip
 
       - name: Install Playwright browsers if cache missed
         if: steps.cache-playwright.outputs.cache-hit != 'true'
